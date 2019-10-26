@@ -1,0 +1,83 @@
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+  *::before,
+  *::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+  :root {
+    --c-mint: rgb(149, 225, 211);
+    --c-white: rgb(255, 255, 255);
+    --c-pink: rgb(243, 129, 129);
+    --c-yellow: rgb(252, 227, 138);
+    --c-violet:rgb(115, 9, 170);
+    --f-kaush: "Kaushan Script", "Arial", sans-serif;
+  }
+.container{
+    margin: 0 auto;
+    width: 992px;
+    font-style: normal;
+    text-align: center;
+    background-image: url(../image/js-1.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height: 650px;
+}
+.greating{
+    padding-top: 50px ;
+    text-transform: uppercase;
+    font-family: var(--f-kaush);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 42px;
+    color: var(--c-mint);
+    text-align: center;
+    margin-bottom: 500px;
+}
+
+.task-list{
+    margin: 0 auto;
+    width: 70%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.task-item{
+    
+}
+.module_btn{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--f-kaush);
+    color: var(--c-pink);
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 50%;
+    padding: 15px;
+    background-color: var(--c-mint);
+}
+.task-link:hover,
+.task-link:focus,
+.module_btn:hover,
+.module_btn:focus{
+    background-color: var(--c-violet);
+    color: var(--c-yellow);
+}
+
+.task-link{
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    font-family: var(--f-kaush);
+    color: var(--c-pink);
+}
+
