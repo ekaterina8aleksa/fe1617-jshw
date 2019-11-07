@@ -1,10 +1,10 @@
 'use strict';
 
-/*function countProps(obj){
+function countProps(obj){
     return Object.keys(obj).length;
-}*/
+}
 
-function isEmpty(obj) {
+/*function isEmpty(obj) {
   for (let key in obj) {
     return false;
   }
@@ -18,7 +18,7 @@ function countProps(obj) {
   }
 
   return count;
-}
+}*/
 
 /*console.log(obj.size); для map*/
 

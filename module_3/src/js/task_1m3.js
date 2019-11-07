@@ -5,7 +5,7 @@ const user = {
     hobby: 'html',
     premium: true,
   };
-  user['mood'] = 'happy';
+  user.mood = 'happy';
   user.hobby = 'javascript';
   user.premium = false;
   const keys = Object.keys(user);
