@@ -1,7 +1,7 @@
 'use strict';
 
-function countProps(obj){
-    return Object.keys(obj).length;
+function countProps(obj) {
+  return Object.keys(obj).length;
 }
 
 /*function isEmpty(obj) {
