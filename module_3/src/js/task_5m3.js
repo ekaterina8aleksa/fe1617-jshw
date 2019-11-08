@@ -16,6 +16,7 @@ const getAllPropValues = function(arr, prop) {
   }
   return values;
 };
+
 console.log(getAllPropValues(products, 'name'));
 console.log(getAllPropValues(products, 'quantity'));
 console.log(getAllPropValues(products, 'category'));
