@@ -7,15 +7,21 @@ const isLoginValid = function(login) {
   if (login.length >= 4 && login.length <= 16) {
     return true;
   }
+  else
+  return false;
 };
 
 const isLoginUnique = function(allLogins, login) {
-  return allLogins.includes(login);
+   if(allLogins.includes(login) === false){
+     return true;
+   }
+else
+return false;
 };
 
 const addLogin = function(allLogins, login) {
   if (isLoginValid(login)) {
-    if (!isLoginUnique(allLogins, login)) {
+    if (isLoginUnique(allLogins, login)) {
       allLogins.push(login);
       console.log((message = 'Логин успешно добавлен!'));
     } else {
