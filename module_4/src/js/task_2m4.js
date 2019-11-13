@@ -4,8 +4,8 @@ const inventory = {
   add(itemName) {
     console.log(`Adding ${itemName} to inventory`);
 
-     this.items.push(itemName);
-     console.log();
+    this.items.push(itemName);
+    console.log();
   },
   remove(itemName) {
     console.log(`Removing ${itemName} from inventory`);
@@ -20,13 +20,9 @@ const invokeInventoryAction = function(itemName, action) {
 };
 
 invokeInventoryAction('Аптечка', inventory.add.bind(inventory));
-// Invoking action on Аптечка
-// Adding Аптечка to inventory
 
-console.log(inventory.items); // ['Монорельса', 'Фильтр', 'Аптечка']
+console.log(inventory.items);
 
 invokeInventoryAction('Фильтр', inventory.remove.bind(inventory));
-// Invoking action on Фильтр
-// Removing Фильтр from inventory
 
-console.log(inventory.items); // ['Монорельса', 'Аптечка']
+console.log(inventory.items);
