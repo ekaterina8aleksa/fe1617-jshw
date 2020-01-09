@@ -1,14 +1,34 @@
 'use strict';
 
+class StringBuilder {
+  constructor(str) {
+    this._value = str;
 
-Напиши класс StringBuilder. На вход он получает один параметр - строку, которую записывает в свойство _value.
+  }
+  get value() {
+    return this._value;
+  }
+  set value(newStr){
+this._value = newStr;
+  }
 
-Добавь классу следующий функционал:
+  append(addstr) {
+    const endStr = this._value.concat(addstr);
+    this.value = endStr;
+   return this.value;
+  }
+  prepend(addstr) {
+    const startStr = addstr.concat(this.value);
+    this.value = startStr;
+    return this.value;
+  }
+  pad(addstr) {
+    const fullStr  = addstr.concat(this.value, addstr);
+    this.value = fullStr;
+    return this.value;
+  }
+}
 
-Геттер value - возвращает текущее значение поля _value
-Метод append(str) - получает парметр str (строку) и добавляет ее в конец _value
-Метод prepend(str) - получает парметр str (строку) и добавляет ее в начало value
-Метод pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
 const builder = new StringBuilder('.');
 
 builder.append('^');
