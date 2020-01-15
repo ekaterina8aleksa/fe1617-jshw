@@ -6,7 +6,7 @@ const totalPrice = pricePerDroid * userChoice;
 const restCredits = credits - totalPrice;
 let message;
 
-if (userChoice === 0) {
+if (userChoice === null) {
   message = 'Отменено пользователем!';
 } else if (totalPrice > credits) {
   message = 'Недостаточно средств на счету!';
