@@ -5,8 +5,8 @@ const Account = function(login, email) {
 };
 
 Account.prototype.getInfo = function() {
-    console.log(`Login: ${this.login}, Email: ${this.email}`);
-  };
+  console.log(`Login: ${this.login}, Email: ${this.email}`);
+};
 
 const poly = new Account('Poly', 'poly@gmail.com');
 poly.getInfo();

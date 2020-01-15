@@ -8,10 +8,11 @@ class Car {
    * который принимает объект-машину как параметр и выводит
    * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
    */
-static getSpecs(Car){
-    console.log(`maxSpeed: ${Car.maxSpeed}, speed: ${Car.speed}, isOn: ${Car.isOn}, distance: ${Car.distance}, price: ${Car.price}`);
-
-}
+  static getSpecs(Car) {
+    console.log(
+      `maxSpeed: ${Car.maxSpeed}, speed: ${Car.speed}, isOn: ${Car.isOn}, distance: ${Car.distance}, price: ${Car.price}`,
+    );
+  }
   /*
    * Конструктор получает объект настроек.
    *
@@ -22,14 +23,13 @@ static getSpecs(Car){
    *  isOn - заведен ли автомобиль, значения true или false. Изначально false
    *  distance - общий киллометраж, изначально 0
    */
-  constructor (maxSpeed, price) {
-      this.maxSpeed = maxSpeed;
-      this._price = price;
-      this.speed = 0;
-      this.isOn = false;
-      this.distance = 0;
-      
-  } 
+  constructor(maxSpeed, price) {
+    this.maxSpeed = maxSpeed;
+    this._price = price;
+    this.speed = 0;
+    this.isOn = false;
+    this.distance = 0;
+  }
 
   /*
    * Добавь геттер и сеттер для свойства price,
@@ -42,15 +42,14 @@ static getSpecs(Car){
   set price(value) {
     this._price = value;
   }
-  
+
   /*
    * Добавь код для того чтобы завести автомобиль
    * Записывает в свойство isOn значение true
    */
   turnOn() {
-      this.isOn = true;
-      console.log('Wroooooommm!!!');
-
+    this.isOn = true;
+    console.log('Wroooooommm!!!');
   }
 
   /*
@@ -59,9 +58,9 @@ static getSpecs(Car){
    * и сбрасывает текущую скорость в 0
    */
   turnOff() {
-      this.isOn = false;
-      this.speed = 0;
-      console.log('Eeeeeeeee!!!');
+    this.isOn = false;
+    this.speed = 0;
+    console.log('Eeeeeeeee!!!');
   }
 
   /*
@@ -70,14 +69,12 @@ static getSpecs(Car){
    * не больше чем значение свойства maxSpeed
    */
   accelerate(value) {
-      if((this.speed + value) < this.maxSpeed){
-          this.speed += value;
-          console.log(this.speed);
-          return this.speed;
-          
-      }
-      else{
-        console.log('Error, you try to exceed max speed!')
+    if (this.speed + value < this.maxSpeed) {
+      this.speed += value;
+      console.log(this.speed);
+      return this.speed;
+    } else {
+      console.log('Error, you try to exceed max speed!');
     }
   }
 
@@ -86,14 +83,12 @@ static getSpecs(Car){
    * при условии что результирующая скорость не меньше нуля
    */
   decelerate(value) {
-      if((this.speed - value) > 0){
-          this.speed -= value;
-          console.log(this.speed);
-          return this.speed;
-
-      }
-      else{
-        console.log('Your car isn`t moving.')
+    if (this.speed - value > 0) {
+      this.speed -= value;
+      console.log(this.speed);
+      return this.speed;
+    } else {
+      console.log('Your car isn`t moving.');
     }
   }
 
@@ -102,19 +97,17 @@ static getSpecs(Car){
    * но только в том случае если машина заведена!
    */
   drive(hours) {
-      if(this.isOn === true){
-    this.distance = (this.speed * hours) + this.distance;
-    console.log(this.distance);
-    return this.distance;
-    
-  }
-  else{
-      console.log('Your car is still turned off.')
-  }
+    if (this.isOn === true) {
+      this.distance = this.speed * hours + this.distance;
+      console.log(this.distance);
+      return this.distance;
+    } else {
+      console.log('Your car is still turned off.');
+    }
   }
 }
 
-const mustang = new Car( 200, 2000 );
+const mustang = new Car(200, 2000);
 
 mustang.turnOn();
 mustang.accelerate(50);
