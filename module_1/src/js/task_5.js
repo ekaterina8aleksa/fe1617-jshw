@@ -4,8 +4,14 @@ let country;
 let price;
 let message;
 const promptInfo = 'Введите страну доставки';
-const userChoice = prompt(promptInfo).toLowerCase();
+const userAnswer = prompt(promptInfo);
 
+
+if(userAnswer === null){
+  console.log('Запрос отменен пользователем');
+}
+else{
+  const userChoice = userAnswer.toLowerCase();
 switch (userChoice) {
   case 'китай':
     country = 'Китай-China';
@@ -43,3 +49,4 @@ switch (userChoice) {
     break;
 }
 console.log(message);
+}
