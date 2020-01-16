@@ -7,6 +7,7 @@ function calculateEngravingPrice(message, pricePerWord) {
   const arreyLength = arr.length;
   const totalAmount = pricePerWord * arreyLength;
   console.log(`Your amount ${totalAmount} for " ${message} "`);
+  return totalAmount;
 }
 calculateEngravingPrice(message, pricePerWord);
 
