@@ -1,7 +1,7 @@
 'use strict';
 const total = 100;
 const ordered = 50;
-const enoughGoods = total > ordered;
+const enoughGoods = total >= ordered;
 /*let message;
 
 if(!enoughGoods){

@@ -5,11 +5,12 @@ const userAnswer = prompt('Введите пароль');
 
 if (userAnswer === null) {
   message = 'Отменено пользователем!';
-  alert(message);
+  //alert(message);
 } else if (userAnswer === ADMIN_PASSWORD) {
   message = 'Добро пожаловать!';
-  alert(message);
+  //alert(message);
 } else {
   message = 'Доступ запрещен, неверный пароль!';
-  alert(message);
+  //alert(message);
 }
+alert(message);
