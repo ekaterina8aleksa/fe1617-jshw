@@ -40,3 +40,4 @@ if (userAnswer === null) {
   }
   console.log(message);
 }
+
