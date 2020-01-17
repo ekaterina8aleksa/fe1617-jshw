@@ -4,6 +4,10 @@ let price;
 let message;
 const promptInfo = 'Введите страну доставки';
 const userAnswer = prompt(promptInfo);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6ac005b352aa39879eb19d3fb7c0bbd1e8f314b9
 if (userAnswer === null) {
   console.log('Запрос отменен пользователем');
 } else {
@@ -40,4 +44,3 @@ if (userAnswer === null) {
   }
   console.log(message);
 }
-
