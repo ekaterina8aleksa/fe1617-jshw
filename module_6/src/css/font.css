@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Harrington';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/8890.woff2') format('woff2'),
+         url('../fonts/8890.woff') format('woff'); 
+  }
