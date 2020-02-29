@@ -24,3 +24,4 @@ const calculateTotalPrice = function(arr, prop) {
 };
 console.log(calculateTotalPrice(products, 'Радар'));
 console.log(calculateTotalPrice(products, 'Дроид'));
+

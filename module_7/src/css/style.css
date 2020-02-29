@@ -1,0 +1,24 @@
+#gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+img {
+width: 80%;
+}
+
+#validation-input {
+    border: 3px solid #bdbdbd;
+  }
+  
+  #validation-input.valid {
+    border-color: #4caf50;
+  }
+  
+  #validation-input.invalid {
+    border-color: #f44336;
+  }
+
+  .task-name{
+    color: rgb(139, 0, 255);
+    text-align: center;
+  }
