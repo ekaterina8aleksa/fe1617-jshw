@@ -1,6 +1,6 @@
 const inputForm = document.getElementById('validation-input');
 const validationLimit = Number(inputForm.getAttribute('data-length'));
-console.log(validationLimit);
+//console.log(validationLimit);
 
 /*const validationCheckup = () => {
   inputForm.value.length !== validationLimit
@@ -12,10 +12,12 @@ console.log(validationLimit);
 
 const validationCheckup = () => {
   if (inputForm.value.length !== validationLimit) {
-    inputForm.classList.toggle('invalid');
+    inputForm.classList.add('invalid');
+    inputForm.classList.remove('valid');
     console.log('invalid');
   } else {
-    inputForm.classList.toggle('valid');
+    inputForm.classList.add('valid');
+    inputForm.classList.remove('invalid');
     console.log('valid');
   }
 

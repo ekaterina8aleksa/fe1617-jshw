@@ -6,7 +6,7 @@ const checkUp = () => {
   let userInfo = inputName.value.trim();
   outputName.hidden = false;
   inputName.value.length === 0
-    ? outputName.textContent
+    ? outputName.textContent = 'незнакомец'
     : (outputName.textContent = userInfo);
 };
 inputName.addEventListener('input', checkUp);

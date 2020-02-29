@@ -1,26 +1,27 @@
 const meter = document.querySelector('#counter');
-
-let clicksNumber = 0;
+const counterValue = document.getElementById('value');
 const prevBtm = meter.querySelector('button[data-action="decrement"]');
 const nextBtn = meter.querySelector('button[data-action="increment"]');
+const clearBtn = document.createElement('button');
+let clicksNumber = 0;
+
 const increment = () => {
   clicksNumber += 1;
-  document.getElementById('value').textContent = clicksNumber;
+  counterValue.textContent = clicksNumber;
 };
 const decrement = () => {
   clicksNumber -= 1;
-  document.getElementById('value').textContent = clicksNumber;
+  counterValue.textContent = clicksNumber;
 };
 
-prevBtm.addEventListener('click', decrement);
-
-nextBtn.addEventListener('click', increment);
-
-const clearBtn = document.createElement('button');
 clearBtn.textContent = 'Clear';
 const clearMeter = () => {
   clicksNumber = 0;
-  document.getElementById('value').textContent = clicksNumber;
+  counterValue.textContent = clicksNumber;
 };
+
 clearBtn.addEventListener('click', clearMeter);
+prevBtm.addEventListener('click', decrement);
+nextBtn.addEventListener('click', increment);
+
 meter.appendChild(clearBtn);
