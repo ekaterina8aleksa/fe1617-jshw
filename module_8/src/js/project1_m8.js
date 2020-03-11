@@ -4,10 +4,9 @@ const galleryRef = document.querySelector('.js-gallery');
 const overlay = document.querySelector('.js-lightbox');
 const pictureItem = document.querySelector('.lightbox__image');
 const closeBtn = document.querySelector('button[data-action="close-lightbox"]');
-let i = 0;
-let currentSlide;
-let bigImg;
-let bigImgAlt;
+const imgSrc = document.querySelector('img.lightbox__image');
+//let currentImg = galleryItems.find(img => img.original === imgSrc.src);
+let currentImgIdx;
 
 /*const createGallery = gallery => {
 const galleryUnit = document.createElement('li');
@@ -72,40 +71,55 @@ function onEsc(event) {
   }
 }
 
-function overlayClickClose(event) {
+/*function overlayClickClose(event) {
   if (event.target.parentNode === event.currentTarget) {
     overlayClose();
   }
+}*/
+function overlayClickClose(event) {
+    if (nextBtn !== event.target && prevBtn !== event.target && event.target.parentNode === event.currentTarget) {
+      overlayClose();
+    }
 }
 // пытаюсь определить на какую картинку клацнули, проверяю ее в диапазоне, чтобы использовать ее как стартовую точку
 const onLeftPrev = () => {
-  currentSlide = event.target;
-  bigImg = event.target.parentNode.href;
-  bigImgAlt = event.target.alt;
-  if (// задаю диапазон
-    galleryItems.indexOf(currentSlide) < galleryItems.length &&
-    galleryItems.indexOf(currentSlide) >= 0
-  ) {
-    i -= 1;
-    pictureItem.src = galleryItems[i].href;//bigImg[i];
-    pictureItem.alt = galleryItems[i].alt;//bigImgAlt[i];
+    const currentImg = galleryItems.find(img => img.original === imgSrc.src);
+    currentImgIdx = currentImg ? galleryItems.indexOf(currentImg) : galleryItems.length - 1;
+  if (currentImgIdx >= 0 && currentImgIdx < galleryItems.length - 1) {
+    currentImgIdx -= 1;
+    pictureItem.src = galleryItems[currentImgIdx].original;
+    pictureItem.alt = galleryItems[currentImgIdx].alt;
+    if(currentImgIdx === 0){
+        prevBtn.classList.add("visually-hidden");
+        prevBtn.classList.remove("btn-prev");
+        nextBtn.classList.add("btn-next");
+    }
+    else 
+    {prevBtn.classList.remove("visually-hidden");
+    prevBtn.classList.add("btn-prev");
+}
   }
-  else i = 0;
+  else currentImgIdx = 0;
 };
 
 const onRightNext = () => {
-  currentSlide = event.target;
-  bigImg = event.target.parentNode.href;
-  bigImgAlt = event.target.alt;
-  if (
-    galleryItems.indexOf(currentSlide) >= 0 &&
-    galleryItems.indexOf(currentSlide) < galleryItems.length
-  ) {
-    i += 1;
-    pictureItem.src = galleryItems[i].href;//bigImg[i];
-    pictureItem.alt = galleryItems[i].alt;//bigImgAlt[i];
+  const currentImg = galleryItems.find(img => img.original === imgSrc.src);
+  currentImgIdx = currentImg ? galleryItems.indexOf(currentImg) : 0;
+  if (currentImgIdx >= 0 && currentImgIdx < galleryItems.length - 1) {
+    currentImgIdx += 1;
+    pictureItem.src = galleryItems[currentImgIdx].original;
+    pictureItem.alt = galleryItems[currentImgIdx].alt;
+    if(currentImgIdx === galleryItems.length - 1){
+        nextBtn.classList.add("visually-hidden");
+        nextBtn.classList.remove("btn-next");
+        prevBtn.classList.add("btn-prev");
+    }
+    else {
+        nextBtn.classList.remove("visually-hidden");
+    nextBtn.classList.add("btn-next");
+}
   }
-  else i = 0;
+  else currentImgIdx = 0;
 };
 
 function onArrowRigth(event) {
@@ -129,3 +143,5 @@ nextBtn.addEventListener('click', onRightNext);
 console.log("code: " +event.code);
 }
  window.addEventListener('keydown', keyHandler);*/
+
+ 
