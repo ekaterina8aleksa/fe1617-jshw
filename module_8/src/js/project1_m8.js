@@ -40,7 +40,7 @@ overlay.append(prevBtn, nextBtn);
 function overlayOpen() {
     event.preventDefault();
     window.addEventListener('keydown', onEsc);
-    window.addEventListener('keydown', onArrowRigth);
+    window.addEventListener('keydown', onArrowRight);
     window.addEventListener('keydown', onArrowLeft);
     if (event.target.nodeName !== 'IMG') return;
     else {
@@ -64,7 +64,7 @@ function overlayOpen() {
 function overlayClose() {
     event.preventDefault();
     window.removeEventListener('keydown', onEsc);
-    window.removeEventListener('keydown', onArrowRigth);
+    window.removeEventListener('keydown', onArrowRight);
     window.removeEventListener('keydown', onArrowLeft);
     overlay.classList.remove('is-open');
     imgSrc.src = '';
@@ -97,6 +97,7 @@ const onLeftPrev = () => {
     nextBtn.classList.remove('visually-hidden');
     if (currentImgIdx > 0) {
         currentImgIdx -= 1;
+        console.log(currentImgIdx);
         imgSrc.src = galleryItems[currentImgIdx].original;
         imgSrc.alt = galleryItems[currentImgIdx].alt;
         if (currentImgIdx === 0) {
@@ -113,6 +114,7 @@ const onRightNext = () => {
     prevBtn.classList.remove('visually-hidden');
     if (currentImgIdx < galleryItems.length - 1) {
         currentImgIdx += 1;
+        console.log(currentImgIdx);
         imgSrc.src = galleryItems[currentImgIdx].original;
         imgSrc.alt = galleryItems[currentImgIdx].alt;
         if (currentImgIdx === galleryItems.length - 1) {
@@ -122,7 +124,7 @@ const onRightNext = () => {
         }
     }
 };
-function onArrowRigth(event) {
+function onArrowRight(event) {
     if (event.code === 'ArrowRight') {
         onRightNext();
     }

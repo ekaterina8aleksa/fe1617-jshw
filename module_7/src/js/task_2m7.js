@@ -24,3 +24,4 @@ const itemList = ingredients.map(function(ingredient) {
 });
 
 ingredientsList.append(...itemList);
+
