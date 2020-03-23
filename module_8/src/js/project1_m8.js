@@ -5,7 +5,7 @@ console.log("code: " +event.code);
 }
  window.addEventListener('keydown', keyHandler);*/
 
- import galleryItems from './gallery-items.js';
+import galleryItems from './gallery-items.js';
 const galleryRef = document.querySelector('.js-gallery');
 const overlay = document.querySelector('.js-lightbox');
 const closeBtn = document.querySelector('button[data-action="close-lightbox"]');
