@@ -8,15 +8,13 @@ class CountdownTimer {
     }
 
     getDataForTimer() {
-        //const currentDate = Date.now();
         const time = this.finalDate - Date.now();
         const days = Math.floor(time / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-            (time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        );
+        const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((time % (1000 * 60)) / 1000);
         return {
+            time,
             days,
             hours,
             minutes,
@@ -31,24 +29,25 @@ class CountdownTimer {
         const minuteSpan = document.querySelector('[data-value="mins"]');
         const secondSpan = document.querySelector('[data-value="secs"]');
 
-        daySpan.textContent = String(this.getDataForTimer().days).padStart(
-            2,
-            '0',
-        );
-        hourSpan.textContent = String(this.getDataForTimer().hours).padStart(
-            2,
-            '0',
-        );
-        minuteSpan.textContent = String(
-            this.getDataForTimer().minutes,
-        ).padStart(2, '0');
-        secondSpan.textContent = String(
-            this.getDataForTimer().seconds,
-        ).padStart(2, '0');
+        clockFace.firstElementChild.setAttribute('style', 'background-color: rgb(255, 102, 102);');
+        clockFace.firstElementChild.nextElementSibling.setAttribute('style', 'background-color:  ;');
+        clockFace.lastElementChild.previousElementSibling.setAttribute('style', 'background-color: rgb(0, 255, 0);');
+        clockFace.lastElementChild.setAttribute('style', 'background-color: rgb(102, 102, 255);');
+
+        daySpan.textContent = String(this.getDataForTimer().days).padStart(2, '0');
+        hourSpan.textContent = String(this.getDataForTimer().hours).padStart(2, '0');
+        minuteSpan.textContent = String(this.getDataForTimer().minutes).padStart(2, '0');
+        secondSpan.textContent = String(this.getDataForTimer().seconds).padStart(2, '0');
     }
 
     timerStart() {
-        setInterval(() => {
+        const deadLine = Date.parse(this.finalDate) <= Date.parse(new Date());
+
+        this.startForTimer = setInterval(() => {
+            if (deadLine) {
+                clearInterval(this.startForTimer);
+                return;
+            }
             this.creatingFaceClock();
         }, 1000);
     }
@@ -56,7 +55,5 @@ class CountdownTimer {
 
 const timer = new CountdownTimer({
     selector: '#timer-1',
-    targetDate: new Date('Sep 1, 2020'),
+    targetDate: new Date('1 Sep 2020'),
 });
-
-// timer.creatingFaceClock();
