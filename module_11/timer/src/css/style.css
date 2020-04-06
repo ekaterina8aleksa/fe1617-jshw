@@ -21,20 +21,21 @@ html {
 body {
     margin: 50px auto;
     font-family: var(--f-har);
-    background-color: var(--c-violet);
+    background-color: rgb(255, 255, 255);
     color: #212121;
 }
 .timer {
     display: flex;
     margin: auto;
-    width: 600px;
-    height: 600px;
+    width: 560px;
+    height: 560px;
     flex-direction: row;
     padding: 30px;
     text-align: center;
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
     color: #212121;
     border-radius: 50%;
+    background-image: url(../SeekingSerenity.png);
 }
 
 .field {
@@ -42,11 +43,10 @@ body {
     flex-wrap: wrap;
     width: 115px;
     height: 110px;
-    margin: auto;
+    margin: 70px auto;
     text-transform: uppercase;
     border: 0;
-    background-color: var(--c-yellow);
-    color: #fff;
+    color: rgba(0, 0, 0);
     padding: 20px;
     cursor: pointer;
     font-size: 12px;

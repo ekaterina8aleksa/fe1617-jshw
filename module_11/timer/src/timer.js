@@ -30,7 +30,7 @@ class CountdownTimer {
         const secondSpan = document.querySelector('[data-value="secs"]');
 
         clockFace.firstElementChild.setAttribute('style', 'background-color: rgb(255, 102, 102);');
-        clockFace.firstElementChild.nextElementSibling.setAttribute('style', 'background-color:  ;');
+        clockFace.firstElementChild.nextElementSibling.setAttribute('style', 'background-color: rgb(255, 255, 102) ;');
         clockFace.lastElementChild.previousElementSibling.setAttribute('style', 'background-color: rgb(0, 255, 0);');
         clockFace.lastElementChild.setAttribute('style', 'background-color: rgb(102, 102, 255);');
 

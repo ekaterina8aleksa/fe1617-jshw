@@ -1,15 +1,10 @@
 const startBtn = document.querySelector('button[data-action="start"]');
 const stopBtn = document.querySelector('button[data-action="stop"]');
+stopBtn.setAttribute('style', 'background-color: rgb(255, 102, 102);');
+startBtn.setAttribute('style', 'background-color: rgb(0, 255, 0);');
 let intervalId = null;
 let isActive = false;
-const colors = [
-    '#FFFFFF',
-    '#2196F3',
-    '#4CAF50',
-    '#FF9800',
-    '#009688',
-    '#795548',
-];
+const colors = ['#FFFFFF', '#2196F3', '#4CAF50', '#FF9800', '#009688', '#795548'];
 const randomIntegerFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
