@@ -2,8 +2,8 @@ class CountdownTimer {
     constructor({ selector, targetDate }) {
         this.timerId = selector;
         this.finalDate = targetDate;
-
         this.creatingFaceClock();
+        this.createTitelDate();
         this.timerStart();
     }
 
@@ -31,13 +31,28 @@ class CountdownTimer {
 
         clockFace.firstElementChild.setAttribute('style', 'background-color: rgb(255, 102, 102);');
         clockFace.firstElementChild.nextElementSibling.setAttribute('style', 'background-color: rgb(255, 255, 102) ;');
-        clockFace.lastElementChild.previousElementSibling.setAttribute('style', 'background-color: rgb(0, 255, 0);');
-        clockFace.lastElementChild.setAttribute('style', 'background-color: rgb(102, 102, 255);');
+        clockFace.lastElementChild.previousElementSibling.previousElementSibling.setAttribute(
+            'style',
+            'background-color: rgb(0, 255, 0);',
+        );
+        clockFace.lastElementChild.previousElementSibling.setAttribute(
+            'style',
+            'background-color: rgb(102, 102, 255);',
+        );
 
         daySpan.textContent = String(this.getDataForTimer().days).padStart(2, '0');
         hourSpan.textContent = String(this.getDataForTimer().hours).padStart(2, '0');
         minuteSpan.textContent = String(this.getDataForTimer().minutes).padStart(2, '0');
         secondSpan.textContent = String(this.getDataForTimer().seconds).padStart(2, '0');
+    }
+
+    createTitelDate() {
+        const titleTargetDate = document.querySelector('.title');
+        if (this.finalDate <= new Date()) {
+            titleTargetDate.textContent = 'Ooops, this is the endddd';
+        } else {
+            titleTargetDate.textContent = `We are waiting for ${this.finalDate.toDateString()}`;
+        }
     }
 
     timerStart() {

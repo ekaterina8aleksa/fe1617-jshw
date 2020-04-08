@@ -8,6 +8,7 @@ html {
 *::after {
     box-sizing: inherit;
 }
+
 :root {
     --c-violet: rgb(204, 153, 255);
     --c-blue: rgb(102, 0, 255);
@@ -24,8 +25,12 @@ body {
     background-color: rgb(255, 255, 255);
     color: #212121;
 }
+
 .timer {
     display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: space-between;
     margin: auto;
     width: 560px;
     height: 560px;
@@ -36,6 +41,15 @@ body {
     color: #212121;
     border-radius: 50%;
     background-image: url(../SeekingSerenity.png);
+}
+
+.title {
+    display: flex;
+    width: 200px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-family: var(--f-har);
+    margin: auto;
 }
 
 .field {
@@ -62,6 +76,7 @@ body {
     margin: 5px 25px;
     border-radius: 45%;
 }
+
 .label {
     margin-bottom: 25px;
     font-family: var(--f-har);
